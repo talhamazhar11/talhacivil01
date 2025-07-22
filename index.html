@@ -1,116 +1,89 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { Mail, Phone, Calendar, Linkedin } from "lucide-react";
-import "./App.css";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talha Mazhar | Civil Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; color: #333; }
+    header { background: url('civil-site.jpg') center/cover no-repeat; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
+    header h1 { font-size: 3em; font-weight: 700; }
+    header p { font-size: 1.3em; margin-top: 0.5em; }
+    nav { background: #1d3557; padding: 1em; display: flex; justify-content: center; gap: 2em; position: sticky; top: 0; z-index: 1000; }
+    nav a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: #fca311; }
+    section { padding: 60px 10%; background: white; }
+    section:nth-child(even) { background: #f1f1f1; }
+    .about, .goals, .projects, .contact { max-width: 1000px; margin: auto; }
+    h2 { font-size: 2em; margin-bottom: 0.5em; }
+    .profile-img { width: 180px; border-radius: 50%; margin: 1em auto; display: block; box-shadow: 0 0 20px rgba(0,0,0,0.2); }
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .project-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .project-card img { width: 100%; height: 200px; object-fit: cover; }
+    .project-card h3 { padding: 15px; font-size: 1.2em; }
+    footer { text-align: center; padding: 30px 0; background: #1d3557; color: white; font-weight: 300; }
+    button { background: #1d3557; color: white; border: none; padding: 10px 20px; margin-top: 10px; border-radius: 6px; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #457b9d; }
+  </style>
+</head>
+<body>
 
-function Navbar() {
-  return (
-    <nav className="flex justify-between items-center px-6 py-4 bg-blue-900 text-white shadow-md sticky top-0 z-50">
-      <h1 className="text-xl font-bold">Engr. Talha Mazhar</h1>
-      <ul className="flex space-x-4">
-        <li><Link to="/" className="hover:underline">Home</Link></li>
-        <li><Link to="/projects" className="hover:underline">Projects</Link></li>
-        <li><Link to="/achievements" className="hover:underline">Achievements</Link></li>
-        <li><Link to="/contact" className="hover:underline">Contact</Link></li>
-      </ul>
-    </nav>
-  );
-}
+  <header>
+    <img src="talha-mazhar-profile.jpg" alt="Talha Mazhar" class="profile-img">
+    <h1>Talha Mazhar</h1>
+    <p>Civil Engineer | Structural Designer | UET Lahore Graduate</p>
+  </header>
 
-function Home() {
-  return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 px-6 py-12 animate-fade-in">
-      <div className="flex flex-col md:flex-row items-center gap-10">
-        <img src="/talha-mazhar-profile.jpg" alt="Talha Mazhar" className="rounded-2xl shadow-lg w-64" />
-        <div>
-          <h2 className="text-3xl font-semibold mb-2 text-blue-800">About Me</h2>
-          <p>
-            Passionate Civil Engineer from UET Lahore integrating AI with modern structural innovation. 
-            Committed to smart, sustainable and elite infrastructure solutions.
-          </p>
-        </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#goals">Goals</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I’m a passionate Civil Engineer from UET Lahore with hands-on experience in design, construction, and documentation. I have served as Director at ICE UET Lahore, and my final year project is based on AI-powered prediction of fly ash brick strength. I strive to blend technology with infrastructure to revolutionize construction in Pakistan.</p>
+  </section>
+
+  <section id="goals" class="goals">
+    <h2>Career Goals</h2>
+    <p>My ambition is to become a project manager and innovative civil engineer known for using technology to create sustainable, efficient, and futuristic infrastructure. I aim to work with top companies and later lead projects that uplift infrastructure in developing areas.</p>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="civil-site.jpg" alt="Site Inspection">
+        <h3>Fly Ash Brick Strength Predictor (AI-Based)</h3>
       </div>
-
-      <div className="mt-12">
-        <h2 className="text-2xl font-semibold text-blue-700 mb-2">Career Goals</h2>
-        <p>
-          To lead iconic engineering projects, infuse AI into construction, and become a global symbol of smart civil engineering.
-        </p>
+      <div class="project-card">
+        <img src="urban-planning.jpg" alt="Planning">
+        <h3>Design Office Structures (DOS) - UET Lahore</h3>
       </div>
-    </div>
-  );
-}
-
-function Projects() {
-  return (
-    <div className="px-6 py-12 bg-white animate-slide-in">
-      <h2 className="text-3xl font-bold mb-6 text-blue-800">Projects</h2>
-      <div className="grid gap-6 md:grid-cols-2">
-        <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-xl transition-all">
-          <img src="/civil-site.jpg" alt="FYP Project" className="rounded mb-4" />
-          <h3 className="text-xl font-semibold">AI-Based Fly Ash Brick Model</h3>
-          <p>Built ML model to predict strength of eco-friendly bricks.</p>
-        </div>
-        <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-xl transition-all">
-          <img src="/urban-planning.jpg" alt="Internship" className="rounded mb-4" />
-          <h3 className="text-xl font-semibold">WASA Internship - Drainage Design</h3>
-          <p>Worked under XEN to design sustainable drainage systems.</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Achievements() {
-  return (
-    <div className="px-6 py-12 bg-gray-50 animate-fade-in">
-      <h2 className="text-3xl font-bold mb-6 text-blue-800">Achievements</h2>
-      <ul className="list-disc pl-5 space-y-3">
-        <li>Director, ICE Society Planning & Documentation, UET Lahore</li>
-        <li>Top performer in Structural Design & Estimation</li>
-        <li>Published research on AI in construction materials (2025)</li>
-      </ul>
-    </div>
-  );
-}
-
-function Contact() {
-  return (
-    <div className="px-6 py-12 bg-white animate-slide-in">
-      <h2 className="text-3xl font-bold mb-6 text-blue-800">Get in Touch</h2>
-      <div className="space-y-4">
-        <div className="flex items-center gap-3">
-          <Mail className="text-blue-600" />
-          <span>talhamazhar.civil@gmail.com</span>
-        </div>
-        <div className="flex items-center gap-3">
-          <Phone className="text-green-600" />
-          <span>+92-XXX-XXXXXXX</span>
-        </div>
-        <div className="flex items-center gap-3">
-          <Linkedin className="text-blue-500" />
-          <a href="https://linkedin.com/in/talhamazhar" target="_blank" className="text-blue-600 hover:underline">LinkedIn Profile</a>
-        </div>
-        <div className="flex items-center gap-3">
-          <Calendar className="text-purple-600" />
-          <a href="https://calendly.com/talhamazhar/meeting" target="_blank" className="text-purple-700 hover:underline">Book a Meeting</a>
-        </div>
+      <div class="project-card">
+        <img src="civil-site.jpg" alt="ICE Society">
+        <h3>Director Planning – ICE UET Lahore</h3>
       </div>
     </div>
-  );
-}
+  </section>
 
-function App() {
-  return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/achievements" element={<Achievements />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
-  );
-}
+  <section id="contact" class="contact">
+    <h2>Contact / Book a Meeting</h2>
+    <p>Email: <a href="mailto:talhamazhar.ce@gmail.com">talhamazhar.ce@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/talhamazhar" target="_blank">linkedin.com/in/talhamazhar</a></p>
+    <p>Book Meeting: <a href="https://cal.com/talhamazhar" target="_blank">Schedule via Cal.com</a></p>
+    <button onclick="window.location.href='mailto:talhamazhar.ce@gmail.com'">Email Me</button>
+  </section>
 
-export default App;
+  <footer>
+    &copy; 2025 Talha Mazhar | All Rights Reserved
+  </footer>
+
+</body>
+</html>

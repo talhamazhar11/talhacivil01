@@ -3,87 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Talha Mazhar | Civil Engineer</title>
+  <title>Engr. Talha Mazhar – Civil Engineering Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif']
+          },
+          colors: {
+            primary: '#1e3a8a',
+            accent: '#fbbf24'
+          },
+          boxShadow: {
+            magic: '0 0 40px rgba(30, 58, 138, 0.3)'
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; color: #333; }
-    header { background: url('civil-site.jpg') center/cover no-repeat; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
-    header h1 { font-size: 3em; font-weight: 700; }
-    header p { font-size: 1.3em; margin-top: 0.5em; }
-    nav { background: #1d3557; padding: 1em; display: flex; justify-content: center; gap: 2em; position: sticky; top: 0; z-index: 1000; }
-    nav a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
-    nav a:hover { color: #fca311; }
-    section { padding: 60px 10%; background: white; }
-    section:nth-child(even) { background: #f1f1f1; }
-    .about, .goals, .projects, .contact { max-width: 1000px; margin: auto; }
-    h2 { font-size: 2em; margin-bottom: 0.5em; }
-    .profile-img { width: 180px; border-radius: 50%; margin: 1em auto; display: block; box-shadow: 0 0 20px rgba(0,0,0,0.2); }
-    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .project-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-    .project-card img { width: 100%; height: 200px; object-fit: cover; }
-    .project-card h3 { padding: 15px; font-size: 1.2em; }
-    footer { text-align: center; padding: 30px 0; background: #1d3557; color: white; font-weight: 300; }
-    button { background: #1d3557; color: white; border: none; padding: 10px 20px; margin-top: 10px; border-radius: 6px; cursor: pointer; transition: background 0.3s; }
-    button:hover { background: #457b9d; }
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      z-index: 999;
+      display: none;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+      display: none;
+    }
   </style>
 </head>
-<body>
+<body class="bg-gray-50 font-sans text-gray-900">
 
-  <header>
-    <img src="talha-mazhar-profile.jpg" alt="Talha Mazhar" class="profile-img">
-    <h1>Talha Mazhar</h1>
-    <p>Civil Engineer | Structural Designer | UET Lahore Graduate</p>
+  <!-- Overlay & Popup -->
+  <div class="overlay" id="overlay" onclick="closePopup()"></div>
+  <div class="popup" id="popup">
+    <h2 class="text-xl font-bold mb-2 text-primary">More Info</h2>
+    <p class="text-sm mb-4">This section contains more detailed information related to Talha Mazhar's projects and vision.</p>
+    <button onclick="closePopup()" class="px-4 py-2 bg-primary text-white rounded hover:bg-blue-900">Close</button>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-primary text-white py-12 shadow-xl">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <img src="talha-mazhar-profile.jpg" alt="Talha Mazhar" class="w-32 h-32 mx-auto rounded-full shadow-lg border-4 border-white mb-4 animate-pulse" />
+      <h1 class="text-4xl font-extrabold">Engr. Talha Mazhar</h1>
+      <p class="text-lg">Civil Engineer | AI-Powered Innovator | UET Lahore Graduate</p>
+    </div>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#goals">Goals</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>I’m a passionate Civil Engineer from UET Lahore with hands-on experience in design, construction, and documentation. I have served as Director at ICE UET Lahore, and my final year project is based on AI-powered prediction of fly ash brick strength. I strive to blend technology with infrastructure to revolutionize construction in Pakistan.</p>
+  <!-- About -->
+  <section class="py-16 px-6 bg-white">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+      <div>
+        <h2 class="text-3xl font-bold text-primary mb-4">About Me</h2>
+        <p class="text-gray-700">I'm a civil engineer with a passion for structural innovation and AI integration. My goal is to modernize infrastructure by combining sustainable practices with modern technology. I aspire to bring revolutionary change in urban development and infrastructure design globally.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1581090700227-1f9c7f06a3ca?auto=format&fit=crop&w=800&q=80" alt="Civil Engineering Site" class="rounded-lg shadow-magic hover:scale-105 transition duration-300" />
+    </div>
   </section>
 
-  <section id="goals" class="goals">
-    <h2>Career Goals</h2>
-    <p>My ambition is to become a project manager and innovative civil engineer known for using technology to create sustainable, efficient, and futuristic infrastructure. I aim to work with top companies and later lead projects that uplift infrastructure in developing areas.</p>
-  </section>
-
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <img src="civil-site.jpg" alt="Site Inspection">
-        <h3>Fly Ash Brick Strength Predictor (AI-Based)</h3>
-      </div>
-      <div class="project-card">
-        <img src="urban-planning.jpg" alt="Planning">
-        <h3>Design Office Structures (DOS) - UET Lahore</h3>
-      </div>
-      <div class="project-card">
-        <img src="civil-site.jpg" alt="ICE Society">
-        <h3>Director Planning – ICE UET Lahore</h3>
+  <!-- Projects -->
+  <section class="bg-gray-100 py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-8 text-center">Key Projects</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-magic hover:shadow-2xl transition duration-300">
+          <h3 class="text-xl font-semibold mb-2">AI-Based Fly Ash Brick Model</h3>
+          <p>Developed a predictive model to estimate the strength of eco-friendly bricks using machine learning.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-magic hover:shadow-2xl transition duration-300">
+          <h3 class="text-xl font-semibold mb-2">WASA Drainage Planning Internship</h3>
+          <p>Worked on real-time drainage system planning and optimization under XEN Muzaffar Abbas.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact / Book a Meeting</h2>
-    <p>Email: <a href="mailto:talhamazhar.ce@gmail.com">talhamazhar.ce@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/talhamazhar" target="_blank">linkedin.com/in/talhamazhar</a></p>
-    <p>Book Meeting: <a href="https://cal.com/talhamazhar" target="_blank">Schedule via Cal.com</a></p>
-    <button onclick="window.location.href='mailto:talhamazhar.ce@gmail.com'">Email Me</button>
+  <!-- Achievements -->
+  <section class="py-16 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-6">Achievements</h2>
+      <ul class="list-disc list-inside text-gray-800 space-y-2">
+        <li>Director, ICE Society Planning & Documentation, UET Lahore</li>
+        <li>Top performer in Structural Design & Estimation</li>
+        <li>Published paper on AI in construction materials (2025)</li>
+      </ul>
+    </div>
   </section>
 
-  <footer>
-    &copy; 2025 Talha Mazhar | All Rights Reserved
+  <!-- Career Goals + Button -->
+  <section class="bg-gray-100 py-16 px-6 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-4">My Vision</h2>
+      <p class="text-gray-700 mb-6">I aim to revolutionize infrastructure development globally by merging civil engineering with artificial intelligence and sustainable construction practices.</p>
+      <button onclick="showPopup()" class="px-6 py-3 bg-accent text-white font-semibold rounded hover:bg-yellow-500 transition">View More</button>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-16 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-6 text-center">Get in Touch</h2>
+      <div class="grid md:grid-cols-2 gap-6 text-gray-800">
+        <div>Email: <span class="font-semibold">talhamazhar.civil@gmail.com</span></div>
+        <div>Phone: <span class="font-semibold">+92-XXX-XXXXXXX</span></div>
+        <div>LinkedIn: <a href="https://linkedin.com/in/talhamazhar" target="_blank" class="text-blue-700 hover:underline">linkedin.com/in/talhamazhar</a></div>
+        <div>Meeting: <a href="https://calendly.com/talhamazhar/meeting" target="_blank" class="text-purple-700 hover:underline">Book via Calendly</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center py-6 mt-10">
+    <p>© 2025 Engr. Talha Mazhar — Designed with 💼 and ❤️</p>
   </footer>
 
+  <script>
+    function showPopup() {
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
 </body>
 </html>

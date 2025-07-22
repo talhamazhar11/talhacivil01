@@ -6,42 +6,52 @@
   <title>Engr. Talha Mazhar - Civil Engineer Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9fafb;
+      background: #f3f4f6;
       color: #111827;
+      line-height: 1.6;
     }
     header {
-      background: #1e3a8a;
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
       color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 80px 20px;
+      animation: fadeIn 1s ease-out;
     }
     section {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 24px;
     }
     h2 {
       color: #1e3a8a;
-      margin-top: 40px;
+      margin-top: 60px;
+      font-size: 28px;
+      border-left: 4px solid #1e40af;
+      padding-left: 12px;
     }
     .card {
       background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      margin-bottom: 20px;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      margin-top: 20px;
+      transition: transform 0.3s ease;
     }
-    ul {
-      padding-left: 20px;
+    .card:hover {
+      transform: translateY(-4px);
     }
     footer {
       text-align: center;
       color: #6b7280;
-      margin: 40px 0;
+      padding: 40px 20px;
     }
     a {
       color: #2563eb;
@@ -50,28 +60,73 @@
     a:hover {
       text-decoration: underline;
     }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Engr. Talha Mazhar</h1>
-    <p>Civil Engineer | UET Lahore | AI Enthusiast | Future Leader</p>
+    <h1 style="font-size: 40px; margin-bottom: 10px;">Engr. Talha Mazhar</h1>
+    <p style="font-size: 18px; max-width: 600px; margin: auto;">Civil Engineer | UET Lahore | AI Innovator | Sustainable Infrastructure Designer</p>
   </header>
 
   <section>
     <h2>About Me</h2>
     <div class="card">
-      <p>I am a civil engineering graduate from UET Lahore, passionate about using AI to modernize construction. I'm a dedicated learner with real-world experience in infrastructure, design, and innovation.</p>
+      <p>I am a civil engineering graduate from UET Lahore. My passion lies in integrating artificial intelligence with modern construction techniques. With a keen eye for innovation and a goal to redefine infrastructure, I thrive on solving real-world engineering problems with futuristic solutions.</p>
     </div>
 
     <h2>Career Goals</h2>
     <div class="card">
-      <p>To lead global infrastructure projects, integrate AI in construction, and become a benchmark in civil engineering innovation.</p>
+      <p>To lead elite infrastructure projects globally, promote smart and sustainable development, and become a visionary figure in civil engineering powered by AI and innovation.</p>
     </div>
 
     <h2>Key Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <strong>AI-Based Fly Ash Brick Model (FYP)</strong>
+        <p>Designed and trained an AI model to predict compressive strength of eco-friendly bricks using experimental data.</p>
+      </div>
+      <div class="card">
+        <strong>WASA Internship – Urban Drainage</strong>
+        <p>Worked under XEN Muzaffar Abbas to optimize urban drainage and flood mitigation designs during my internship.</p>
+      </div>
+      <div class="card">
+        <strong>AutoCAD & Estimation Practice</strong>
+        <p>Created detailed estimation sheets and CAD plans for various residential and infrastructure-based design scenarios.</p>
+      </div>
+    </div>
+
+    <h2>Achievements</h2>
     <div class="card">
       <ul>
-        <li><strong>AI-Based Fly Ash Brick Model:</strong> Predicted strength using machine learning.</li>
-        <li><strong>WASA Internship:</strong> Worked
+        <li>Director, ICE Society Planning & Documentation – UET Lahore</li>
+        <li>Top performer in Design, RCC Structures & Cost Estimation</li>
+        <li>Research Publication on AI in Fly Ash Bricks – 2025</li>
+        <li>Consistent Dean’s Honor List Recipient</li>
+      </ul>
+    </div>
+
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:talhamazhar.civil@gmail.com">talhamazhar.civil@gmail.com</a></p>
+      <p>Phone: +92-XXX-XXXXXXX</p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/talhamazhar" target="_blank">linkedin.com/in/talhamazhar</a></p>
+      <p>Book Meeting: <a href="https://calendly.com/talhamazhar/meeting" target="_blank">Book on Calendly</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Engr. Talha Mazhar | Designed for excellence and innovation.</p>
+  </footer>
+
+</body>
+</html>

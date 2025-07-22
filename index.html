@@ -1,148 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Mail, Phone, Calendar, Linkedin } from "lucide-react";
+import "./App.css";
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engr. Talha Mazhar | Civil Engineer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+function Navbar() {
+  return (
+    <nav className="flex justify-between items-center px-6 py-4 bg-blue-900 text-white shadow-md sticky top-0 z-50">
+      <h1 className="text-xl font-bold">Engr. Talha Mazhar</h1>
+      <ul className="flex space-x-4">
+        <li><Link to="/" className="hover:underline">Home</Link></li>
+        <li><Link to="/projects" className="hover:underline">Projects</Link></li>
+        <li><Link to="/achievements" className="hover:underline">Achievements</Link></li>
+        <li><Link to="/contact" className="hover:underline">Contact</Link></li>
+      </ul>
+    </nav>
+  );
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-    }
+function Home() {
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-900 px-6 py-12 animate-fade-in">
+      <div className="flex flex-col md:flex-row items-center gap-10">
+        <img src="/talha-mazhar-profile.jpg" alt="Talha Mazhar" className="rounded-2xl shadow-lg w-64" />
+        <div>
+          <h2 className="text-3xl font-semibold mb-2 text-blue-800">About Me</h2>
+          <p>
+            Passionate Civil Engineer from UET Lahore integrating AI with modern structural innovation. 
+            Committed to smart, sustainable and elite infrastructure solutions.
+          </p>
+        </div>
+      </div>
 
-    header {
-      background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158') center/cover no-repeat;
-      padding: 80px 20px;
-      text-align: center;
-      color: white;
-    }
+      <div className="mt-12">
+        <h2 className="text-2xl font-semibold text-blue-700 mb-2">Career Goals</h2>
+        <p>
+          To lead iconic engineering projects, infuse AI into construction, and become a global symbol of smart civil engineering.
+        </p>
+      </div>
+    </div>
+  );
+}
 
-    header img {
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      border: 4px solid white;
-      margin-bottom: 20px;
-    }
+function Projects() {
+  return (
+    <div className="px-6 py-12 bg-white animate-slide-in">
+      <h2 className="text-3xl font-bold mb-6 text-blue-800">Projects</h2>
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-xl transition-all">
+          <img src="/civil-site.jpg" alt="FYP Project" className="rounded mb-4" />
+          <h3 className="text-xl font-semibold">AI-Based Fly Ash Brick Model</h3>
+          <p>Built ML model to predict strength of eco-friendly bricks.</p>
+        </div>
+        <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-xl transition-all">
+          <img src="/urban-planning.jpg" alt="Internship" className="rounded mb-4" />
+          <h3 className="text-xl font-semibold">WASA Internship - Drainage Design</h3>
+          <p>Worked under XEN to design sustainable drainage systems.</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-    nav {
-      background-color: #003366;
-      padding: 15px;
-      text-align: center;
-    }
+function Achievements() {
+  return (
+    <div className="px-6 py-12 bg-gray-50 animate-fade-in">
+      <h2 className="text-3xl font-bold mb-6 text-blue-800">Achievements</h2>
+      <ul className="list-disc pl-5 space-y-3">
+        <li>Director, ICE Society Planning & Documentation, UET Lahore</li>
+        <li>Top performer in Structural Design & Estimation</li>
+        <li>Published research on AI in construction materials (2025)</li>
+      </ul>
+    </div>
+  );
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: 600;
-    }
+function Contact() {
+  return (
+    <div className="px-6 py-12 bg-white animate-slide-in">
+      <h2 className="text-3xl font-bold mb-6 text-blue-800">Get in Touch</h2>
+      <div className="space-y-4">
+        <div className="flex items-center gap-3">
+          <Mail className="text-blue-600" />
+          <span>talhamazhar.civil@gmail.com</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <Phone className="text-green-600" />
+          <span>+92-XXX-XXXXXXX</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <Linkedin className="text-blue-500" />
+          <a href="https://linkedin.com/in/talhamazhar" target="_blank" className="text-blue-600 hover:underline">LinkedIn Profile</a>
+        </div>
+        <div className="flex items-center gap-3">
+          <Calendar className="text-purple-600" />
+          <a href="https://calendly.com/talhamazhar/meeting" target="_blank" className="text-purple-700 hover:underline">Book a Meeting</a>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-      animation: fadeIn 1s ease-in-out;
-    }
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/achievements" element={<Achievements />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
+  );
+}
 
-    h2 {
-      color: #003366;
-      margin-bottom: 20px;
-    }
-
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    a {
-      color: #0066cc;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <img src="https://avatars.githubusercontent.com/u/15067898?s=280&v=4" alt="Talha Mazhar Photo">
-    <h1>Engr. Talha Mazhar</h1>
-    <p>Civil Engineer | UET Lahore | AI-Focused Innovator</p>
-  </header>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#goals">Goals</a>
-    <a href="#projects">Projects</a>
-    <a href="#achievements">Achievements</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a passionate Civil Engineer from UET Lahore with a focus on integrating AI into structural innovation. My mission is to modernize infrastructure with smart, sustainable, and efficient engineering.</p>
-  </section>
-
-  <section id="goals">
-    <h2>Career Goals</h2>
-    <p>To lead high-impact infrastructure projects globally, leverage AI to revolutionize construction, and become a symbol of engineering excellence.</p>
-  </section>
-
-  <section id="projects">
-    <h2>Key Projects</h2>
-    <ul>
-      <li><strong>AI-Based Fly Ash Brick Strength Prediction Model (FYP):</strong> Developed an ML model to predict mechanical characteristics of eco-friendly bricks.</li>
-      <li><strong>Drainage Planning Internship – WASA:</strong> Designed and optimized urban drainage systems under supervision of XEN Muzaffar Abbas.</li>
-    </ul>
-    <img src="https://images.unsplash.com/photo-1567961708375-484f3d0eae46" alt="Construction Project" width="100%" style="margin-top: 20px; border-radius: 10px;">
-  </section>
-
-  <section id="achievements">
-    <h2>Achievements</h2>
-    <ul>
-      <li>Director, ICE Society Planning & Documentation, UET Lahore</li>
-      <li>Top performer in Structural Design & Estimation subjects</li>
-      <li>Published technical paper on AI in construction materials (2025)</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact & Booking</h2>
-    <p>Email: <a href="mailto:talhamazhar.civil@gmail.com">talhamazhar.civil@gmail.com</a></p>
-    <p>Phone: +92-XXX-XXXXXXX</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/talhamazhar" target="_blank">linkedin.com/in/talhamazhar</a></p>
-    <p>Book a Meeting: <a href="https://calendly.com/talhamazhar/meeting" target="_blank">Calendly</a></p>
-  </section>
-
-  <footer>
-    <p>© 2025 Engr. Talha Mazhar | Built with ❤️ by Talha</p>
-  </footer>
-</body>
-
-</html>
+export default App;

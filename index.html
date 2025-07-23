@@ -53,36 +53,6 @@
 </head>
 <body class="bg-gray-50 font-sans text-gray-900">
 
-  <!-- Overlay & Popup -->
-<div class="overlay" id="overlay" onclick="closePopup()"></div>
-<div class="popup" id="popup">
-  <h2 class="text-xl font-bold mb-4 text-primary">More Info</h2>
-
-  <h3 class="text-lg font-semibold mb-2">💼 Project Section – Expanded Content</h3>
-  <p class="mb-2">🧱 <strong>AI-Based Fly Ash Brick Model:</strong><br>
-  This Final Year Project focuses on integrating Artificial Intelligence into sustainable construction. Using a dataset of physical and mechanical properties of fly ash bricks, we developed a machine learning model that predicts compressive strength and durability. The project not only promotes eco-friendly construction but also reduces time and cost in material testing.</p>
-
-  <p class="mb-2">🌊 <strong>WASA Drainage Planning Internship:</strong><br>
- During my internship at WASA Lahore, I worked under XEN Muzaffar Abbas, contributing to the design and evaluation of urban drainage systems. I learned practical application of flow routing, pipe sizing, and GIS-based mapping, helping the authority in stormwater management planning.</p>
-
-  <p class="mb-2">🚰 <strong>PRMSC Public Health Internship:</strong><br>
-  I assisted in overseeing water supply and sewerage systems under a World Bank-funded public health project. I observed real-time construction site supervision of STPs (Sewerage Treatment Plants), pipeline trenching, and chlorination protocols in rural Punjab under the Tehsil Manager.</p>
-
-  <p class="mb-4">📐 <strong>Estimation Internship (USA Projects):</strong><br>
-  Worked on US-based residential and commercial projects using PlanSwift software for takeoff and quantity estimation in CSI Divisions 03 (Concrete), 22 (Plumbing), 23 (HVAC), and 26 (Electrical). Gained hands-on experience in blueprint analysis, bid preparation, and estimator workflows.</p>
-
-  <h3 class="text-lg font-semibold mb-2">🏅 Achievements</h3>
-  <p class="mb-2">ICE Society UET Lahore: As Director Planning & Documentation, I managed event planning, student outreach, and collaborative documentation for society-led technical and cultural events.</p>
-  <p class="mb-2">Technical Paper (2025): Research paper on “AI Integration in Civil Materials Testing” in the Journal of Civil Engineering and Innovation.”</p>
-  <p class="mb-4">Academic Excellence: Best Performance in Structural Design (RC and Steel), Estimation & Costing, and Geotechnical Engineering.</p>
-
-  <h3 class="text-lg font-semibold mb-2">📘 About Me</h3>
-  <p class="mb-4">I am Engr. Talha Mazhar, a passionate civil engineer from UET Lahore. With a vision to combine modern AI tools and classical civil engineering principles, I strive to develop smarter infrastructure solutions. I’m deeply committed to sustainability, project efficiency, and continual learning through both field exposure and technical innovation.</p>
-  <p class="mb-4">My journey includes not only academic excellence but also valuable internships and leadership experiences. I believe the future of civil engineering lies in digital transformation, and I want to be at the forefront of this revolution.</p>
-
-
-  <button onclick="closePopup()" class="px-4 py-2 bg-primary text-white rounded hover:bg-blue-900">Close</button>
-</div>
 
 
   <!-- Header -->
@@ -189,4 +159,62 @@
     }
   </script>
 </body>
+<!-- View More Button -->
+<button onclick="openPopup()" class="px-4 py-2 bg-primary text-white rounded hover:bg-blue-900">View More</button>
+
+<!-- Overlay & Popup -->
+<div class="fixed inset-0 bg-black bg-opacity-60 z-40 hidden" id="overlay" onclick="closePopup()"></div>
+
+<div id="popup" class="fixed z-50 hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white max-w-2xl w-11/12 max-h-[90vh] overflow-y-auto p-6 rounded-2xl shadow-2xl">
+  <h2 class="text-xl font-bold mb-4 text-primary">More Info</h2>
+
+  <h3 class="text-lg font-semibold mb-2">💼 Project Section – Expanded Content</h3>
+  <p class="mb-2">🧱 <strong>AI-Based Fly Ash Brick Model:</strong><br>
+  This Final Year Project integrates AI into sustainable construction. Using data on fly ash bricks' properties, we built a model predicting strength and durability — promoting cost-effective, eco-friendly testing.</p>
+
+  <p class="mb-2">🌊 <strong>WASA Drainage Planning Internship:</strong><br>
+  Interned under XEN Muzaffar Abbas, contributing to urban drainage design, flow routing, and GIS-based planning for stormwater systems in Lahore.</p>
+
+  <p class="mb-2">🚰 <strong>PRMSC Public Health Internship:</strong><br>
+  Worked on World Bank-funded projects in rural Punjab — supervised water supply systems, STPs, trenching, and chlorination protocols.</p>
+
+  <p class="mb-4">📐 <strong>Estimation Internship (USA Projects):</strong><br>
+  Estimated quantities using PlanSwift in CSI Divisions 03, 22, 23, 26 for U.S. residential and commercial projects. Skilled in bid preparation and blueprint takeoffs.</p>
+
+  <h3 class="text-lg font-semibold mb-2">🏅 Achievements</h3>
+  <p class="mb-2">Director Planning – ICE Society UET Lahore: Led documentation, student outreach, and event execution.</p>
+  <p class="mb-2">Research Publication (2025): Published “AI Integration in Civil Materials Testing.”</p>
+  <p class="mb-4">Academic Distinction: Topped in RC & Steel Design, Estimation & Costing, and Geotech.</p>
+
+  <h3 class="text-lg font-semibold mb-2">📘 About Me</h3>
+  <p class="mb-2">I am Engr. Talha Mazhar from UET Lahore, passionate about combining AI with classical civil engineering. I aim to lead sustainable and tech-driven infrastructure development.</p>
+
+  <p class="mb-4">With hands-on experience, research, and leadership roles, I strive to bring digital transformation to civil engineering across Pakistan and beyond.</p>
+
+  <button onclick="closePopup()" class="mt-2 px-4 py-2 bg-primary text-white rounded hover:bg-blue-900">Close</button>
+</div>
+
+<!-- JavaScript -->
+<script>
+  function openPopup() {
+    document.getElementById('popup').classList.remove('hidden');
+    document.getElementById('overlay').classList.remove('hidden');
+  }
+
+  function closePopup() {
+    document.getElementById('popup').classList.add('hidden');
+    document.getElementById('overlay').classList.add('hidden');
+  }
+</script>
+
+<!-- Optional Custom Tailwind Color Styling -->
+<style>
+  .text-primary {
+    color: #2563eb; /* Tailwind blue-600 */
+  }
+  .bg-primary {
+    background-color: #2563eb;
+  }
+</style>
+
 </html>

@@ -91,6 +91,36 @@
 }
 </style>
 
+<style>
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out both;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-600 {
+  animation-delay: 0.6s;
+}
+.delay-800 {
+  animation-delay: 0.8s;
+}
+</style>
+
+  
   
 </head>
 <body class="bg-gray-50 font-sans text-gray-900">
@@ -98,35 +128,35 @@
 
 
 <!-- Hero Header -->
-<header class="relative bg-[url('structural-engineering-2000x1000px-aspect-ratio-3-1-2.jpg')] bg-cover bg-center text-white min-h-[100vh] flex items-center justify-center shadow-2xl">
+<header class="relative bg-[url('structural-engineering-2000x1000px-aspect-ratio-3-1-2.jpg')] bg-cover bg-center text-white min-h-[100vh] flex items-center justify-center shadow-2xl overflow-hidden">
 
-  <!-- Gradient Overlay for Readability -->
+  <!-- Gradient Overlay -->
   <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
 
   <!-- Hero Content -->
   <div class="relative z-10 max-w-6xl w-full mx-auto px-6 text-center">
     
-    <!-- Profile Image with Ring -->
-    <div class="relative w-56 h-56 sm:w-64 sm:h-64 mx-auto mb-6">
+    <!-- Animated Profile Image -->
+    <div class="relative w-56 h-56 sm:w-64 sm:h-64 mx-auto mb-6 animate-fade-in-up">
       <img src="talha-mazhar-profile.jpg" alt="Talha Mazhar"
            class="w-full h-full object-cover rounded-full border-4 border-white shadow-xl hover:scale-105 transition duration-300 ring-4 ring-blue-200/40 hover:ring-blue-400/50" />
     </div>
 
-    <!-- Name -->
-    <h1 class="text-5xl sm:text-6xl font-bold tracking-tight text-white drop-shadow-[0_3px_10px_rgba(0,0,0,0.7)]">
+    <!-- Animated Name -->
+    <h1 class="text-5xl sm:text-6xl font-bold tracking-tight text-white drop-shadow-[0_3px_10px_rgba(0,0,0,0.7)] animate-fade-in-up delay-200">
       Engr. Talha Bin Mazhar
     </h1>
 
-    <!-- Tagline -->
-    <p class="mt-4 text-xl sm:text-2xl font-medium text-white/90 drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)] leading-relaxed">
+    <!-- Animated Tagline -->
+    <p class="mt-4 text-xl sm:text-2xl font-medium text-white/90 drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)] leading-relaxed animate-fade-in-up delay-400">
       Civil Engineer • AI-Powered Innovator • UET Lahore Graduate
     </p>
 
-    <!-- Subtext / Credibility Line -->
-    <div class="mt-6 text-white/80 text-lg sm:text-xl font-light italic drop-shadow-[0_2px_5px_rgba(0,0,0,0.5)]">
-       Your Next Strategic Engineering Partner - Open for Opportunities
+    <!-- Subtext / Credibility Lines -->
+    <div class="mt-6 text-white/80 text-lg sm:text-xl font-light italic drop-shadow-[0_2px_5px_rgba(0,0,0,0.5)] animate-fade-in-up delay-600">
+      Your Next Strategic Engineering Partner – Open for Opportunities
     </div>
-    <div class="mt-6 text-white/80 text-lg sm:text-xl font-light italic drop-shadow-[0_2px_5px_rgba(0,0,0,0.5)]">
+    <div class="mt-4 text-white/80 text-lg sm:text-xl font-light italic drop-shadow-[0_2px_5px_rgba(0,0,0,0.5)] animate-fade-in-up delay-800">
       📌 Available for Collaborations & Projects
     </div>
     

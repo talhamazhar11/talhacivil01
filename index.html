@@ -120,7 +120,16 @@
 }
 </style>
 
-  
+<!-- Add this style in the <head> or before </body> -->
+<style>
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out forwards;
+}
+</style>
   
 </head>
 <body class="bg-gray-50 font-sans text-gray-900">
@@ -239,17 +248,20 @@
   </div>
 </section>
 
-  <!-- Achievements -->
-  <section class="py-16 px-6 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-primary mb-6">Achievements</h2>
-      <ul class="list-disc list-inside text-gray-800 space-y-2">
-        <li>Director, ICE Society Planning & Documentation, UET Lahore</li>
-        <li>Top performer in Structural Design & Estimation Competition</li>
-        <li>Research paper on AI in construction materials (2025)</li>
-      </ul>
-    </div>
-  </section>
+ 
+
+<!-- Achievements Section (Centered with Animation) -->
+<section class="py-16 px-6 bg-white flex justify-center items-center">
+  <div class="max-w-5xl w-full animate-fade-in-up">
+    <h2 class="text-3xl font-bold text-center text-primary mb-6">Achievements</h2>
+    <ul class="list-disc list-inside text-gray-800 space-y-2 text-lg">
+      <li>Director, ICE Society Planning & Documentation, UET Lahore</li>
+      <li>Top performer in Structural Design & Estimation Competition</li>
+      <li>Research paper on AI in construction materials (2025)</li>
+    </ul>
+  </div>
+</section>
+
 
   <!-- Career Goals + Button -->
   <section class="bg-gray-100 py-16 px-6 text-center">
@@ -263,7 +275,7 @@
   <!-- Contact -->
 <section class="py-16 px-6 bg-white">
   <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-primary mb-10">📞 Get in Touch</h2>
+    <h2 class="text-3xl font-bold text-primary mb-10"> Get in Touch</h2>
     
     <div class="grid sm:grid-cols-2 gap-6 text-gray-800 text-left sm:text-center">
       <div>Email: <span class="font-semibold">talhabinmazhar123@gmail.com</span></div>

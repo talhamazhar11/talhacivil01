@@ -56,11 +56,13 @@
 
 
   <!-- Header -->
-<header class="bg-[url('UET-Lahore-HD-Photo-Auditorium-e1558263729509.webp')] bg-cover bg-center text-white py-20 shadow-xl">
-  <div class="bg-grey/60 py-12 px-6 max-w-6xl mx-auto text-center rounded-xl backdrop-blur-sm">
+<header class="bg-[url('UET-Lahore-HD-Photo-Auditorium-e1558263729509.webp')] bg-cover bg-center text-white py-20 shadow-xl relative">
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-transparent"></div>
+  
+  <div class="relative z-10 max-w-6xl mx-auto px-6 text-center backdrop-blur-md bg-white/10 rounded-2xl shadow-xl py-10">
     <img src="talha-mazhar-profile.jpg" alt="Talha Mazhar" class="w-32 h-32 mx-auto rounded-full shadow-lg border-4 border-white mb-4 animate-pulse" />
-    <h1 class="text-4xl font-extrabold">Engr. Talha Bin Mazhar</h1>
-    <p class="text-lg">Civil Engineer | AI-Powered Innovator | UET Lahore Graduate</p>
+    <h1 class="text-4xl font-extrabold text-white drop-shadow-md">Engr. Talha Bin Mazhar</h1>
+    <p class="text-lg text-white/90">Civil Engineer | AI-Powered Innovator | UET Lahore Graduate</p>
   </div>
 </header>
 
@@ -163,24 +165,25 @@
   </script>
 </body>
   
-<!-- Overlay & Popup -->
-<div class="fixed inset-0 bg-black bg-opacity-60 z-40 hidden" id="overlay" onclick="closePopup()"></div>
+<!-- Overlay -->
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-60 z-40 hidden" onclick="closePopup()"></div>
 
-<div id="popup" class="fixed z-50 hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white max-w-2xl w-11/12 max-h-[90vh] overflow-y-auto p-6 rounded-2xl shadow-2xl">
+<!-- Popup -->
+<div id="popup" class="fixed z-50 hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-[90%] sm:w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto p-6 rounded-2xl shadow-2xl">
   <h2 class="text-xl font-bold mb-4 text-primary">More Info</h2>
 
   <h3 class="text-lg font-semibold mb-2">💼 Project Section – Expanded Content</h3>
   <p class="mb-2">🧱 <strong>AI-Based Fly Ash Brick Model:</strong><br>
-  This Final Year Project integrates AI into sustainable construction. Using data on fly ash bricks' properties, we built a model predicting strength and durability — promoting cost-effective, eco-friendly testing.</p>
+    This Final Year Project integrates AI into sustainable construction. Using data on fly ash bricks' properties, we built a model predicting strength and durability — promoting cost-effective, eco-friendly testing.</p>
 
   <p class="mb-2">🌊 <strong>WASA Drainage Planning Internship:</strong><br>
-  Interned under XEN Muzaffar Abbas, contributing to urban drainage design, flow routing, and GIS-based planning for stormwater systems in Lahore.</p>
+    Interned under XEN Muzaffar Abbas, contributing to urban drainage design, flow routing, and GIS-based planning for stormwater systems in Lahore.</p>
 
   <p class="mb-2">🚰 <strong>PRMSC Public Health Internship:</strong><br>
-  Worked on World Bank-funded projects in rural Punjab — supervised water supply systems, STPs, trenching, and chlorination protocols.</p>
+    Worked on World Bank-funded projects in rural Punjab — supervised water supply systems, STPs, trenching, and chlorination protocols.</p>
 
   <p class="mb-4">📐 <strong>Estimation Internship (USA Projects):</strong><br>
-  Estimated quantities using PlanSwift in CSI Divisions 03, 22, 23, 26 for U.S. residential and commercial projects. Skilled in bid preparation and blueprint takeoffs.</p>
+    Estimated quantities using PlanSwift in CSI Divisions 03, 22, 23, 26 for U.S. residential and commercial projects. Skilled in bid preparation and blueprint takeoffs.</p>
 
   <h3 class="text-lg font-semibold mb-2">🏅 Achievements</h3>
   <p class="mb-2">Director Planning – ICE Society UET Lahore: Led documentation, student outreach, and event execution.</p>
@@ -195,7 +198,7 @@
   <button onclick="closePopup()" class="mt-2 px-4 py-2 bg-primary text-white rounded hover:bg-blue-900">Close</button>
 </div>
 
-<!-- JavaScript -->
+<!-- JS -->
 <script>
   function openPopup() {
     document.getElementById('popup').classList.remove('hidden');
@@ -208,10 +211,10 @@
   }
 </script>
 
-<!-- Optional Custom Tailwind Color Styling -->
+<!-- Tailwind Utility Colors if not already defined -->
 <style>
   .text-primary {
-    color: #2563eb; /* Tailwind blue-600 */
+    color: #2563eb;
   }
   .bg-primary {
     background-color: #2563eb;

@@ -170,6 +170,21 @@
       document.getElementById('overlay').style.display = 'none';
     }
   </script>
+
+  <!-- Overlay -->
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-60 z-40 hidden" onclick="closePopup()"></div>
+
+<!-- Popup -->
+<div id="popup" class="fixed z-50 hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-[90%] sm:w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto p-6 rounded-2xl shadow-2xl">
+  <h2 class="text-xl font-bold mb-4 text-primary">More Info</h2>
+
+  <!-- Your content here... -->
+  <p class="mb-4">I am Engr. Talha Mazhar from UET Lahore, passionate about combining AI with classical civil engineering...</p>
+
+  <button onclick="closePopup()" class="mt-2 px-4 py-2 bg-primary text-white rounded hover:bg-blue-900">Close</button>
+</div>
+
+  
 </body>
   
 <!-- Overlay -->
@@ -207,19 +222,16 @@
 
 <!-- JS -->
 <script>
-  const popup = document.getElementById('popup');
-  const overlay = document.getElementById('overlay');
-  const closeBtn = document.getElementById('closeBtn');
-
-  function openPopup() {
-    popup.classList.remove('hidden');
-    overlay.classList.remove('hidden');
+  function showPopup() {
+    document.getElementById('popup').classList.remove('hidden');
+    document.getElementById('overlay').classList.remove('hidden');
   }
 
   function closePopup() {
-    popup.classList.add('hidden');
-    overlay.classList.add('hidden');
+    document.getElementById('popup').classList.add('hidden');
+    document.getElementById('overlay').classList.add('hidden');
   }
+</script>
 
   // Ensure the button triggers closing
   if (closeBtn) {

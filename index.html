@@ -201,23 +201,7 @@
 <div id="popup" class="fixed z-50 hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-[90%] sm:w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto p-6 rounded-2xl shadow-2xl">
   <h2 class="text-xl font-bold mb-4 text-primary">More Info</h2>
 
-  <!-- Your content here... -->
-  <p class="mb-4">I am Engr. Talha Mazhar from UET Lahore, passionate about combining AI with classical civil engineering...</p>
-
-  <button onclick="closePopup()" class="mt-2 px-4 py-2 bg-primary text-white rounded hover:bg-blue-900">Close</button>
-</div>
-
-  
-</body>
-  
-<!-- Overlay -->
-<div id="overlay" class="fixed inset-0 bg-black bg-opacity-60 z-40 hidden" onclick="closePopup()"></div>
-
-<!-- Popup -->
-<div id="popup" class="fixed z-50 hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-[90%] sm:w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto p-6 rounded-2xl shadow-2xl">
-  <h2 class="text-xl font-bold mb-4 text-primary">More Info</h2>
-
-  <h3 class="text-lg font-semibold mb-2">💼 Project Section – Expanded Content</h3>
+ <h3 class="text-lg font-semibold mb-2">💼 Project Section – Expanded Content</h3>
   <p class="mb-2">🧱 <strong>AI-Based Fly Ash Brick Model:</strong><br>
     This Final Year Project integrates AI into sustainable construction. Using data on fly ash bricks' properties, we built a model predicting strength and durability — promoting cost-effective, eco-friendly testing.</p>
 
@@ -240,8 +224,20 @@
 
   <p class="mb-4">With hands-on experience, research, and leadership roles, I strive to bring digital transformation to civil engineering across Pakistan and beyond.</p>
 
-  <button id="closeBtn" class="mt-2 px-4 py-2 bg-primary text-white rounded hover:bg-blue-900">Close</button>
+  <button onclick="closePopup()" class="mt-2 px-4 py-2 bg-primary text-white rounded hover:bg-blue-900">Close</button>
 </div>
+
+  
+</body>
+  
+<!-- Overlay -->
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-60 z-40 hidden" onclick="closePopup()"></div>
+
+<!-- Popup -->
+<div id="popup" class="fixed z-50 hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-[90%] sm:w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto p-6 rounded-2xl shadow-2xl">
+  <h2 class="text-xl font-bold mb-4 text-primary">More Info</h2>
+
+ 
 
 <!-- JS -->
 <script>
@@ -256,10 +252,7 @@
   }
 </script>
 
-  // Ensure the button triggers closing
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closePopup);
-  }
+
 </script>
 
 <!-- Tailwind Custom Colors -->
@@ -271,4 +264,15 @@
     background-color: #2563eb;
   }
 </style>
+
+<style>
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+</style>
+  
 </html>

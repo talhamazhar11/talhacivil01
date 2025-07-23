@@ -56,15 +56,22 @@
 
 
   <!-- Header -->
-<header class="bg-[url('UET-Lahore-HD-Photo-Auditorium-e1558263729509.webp')] bg-cover bg-center text-white py-20 shadow-xl relative">
-  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-transparent"></div>
-  
-  <div class="relative z-10 max-w-6xl mx-auto px-6 text-center backdrop-blur-md bg-white/10 rounded-2xl shadow-xl py-10">
-    <img src="talha-mazhar-profile.jpg" alt="Talha Mazhar" class="w-32 h-32 mx-auto rounded-full shadow-lg border-4 border-white mb-4 animate-pulse" />
-    <h1 class="text-4xl font-extrabold text-white drop-shadow-md">Engr. Talha Bin Mazhar</h1>
-    <p class="text-lg text-white/90">Civil Engineer | AI-Powered Innovator | UET Lahore Graduate</p>
+<header class="relative bg-[url('UET-Lahore-HD-Photo-Auditorium-e1558263729509.webp')] bg-cover bg-center text-white min-h-[90vh] flex items-center justify-center shadow-xl">
+  <!-- Dark Overlay for better text readability -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/20"></div>
+
+  <!-- Content Box -->
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl shadow-2xl p-10">
+    <img src="talha-mazhar-profile.jpg" alt="Talha Mazhar"
+         class="w-32 h-32 mx-auto rounded-full border-4 border-white shadow-lg transition-transform hover:scale-105 duration-300" />
+
+    <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold text-white drop-shadow-lg">Engr. Talha Bin Mazhar</h1>
+    <p class="mt-2 text-lg sm:text-xl text-white/90 font-medium">
+      Civil Engineer • AI-Powered Innovator • UET Lahore Graduate
+    </p>
   </div>
 </header>
+
 
 
   <!-- About -->
@@ -195,23 +202,32 @@
 
   <p class="mb-4">With hands-on experience, research, and leadership roles, I strive to bring digital transformation to civil engineering across Pakistan and beyond.</p>
 
-  <button onclick="closePopup()" class="mt-2 px-4 py-2 bg-primary text-white rounded hover:bg-blue-900">Close</button>
+  <button id="closeBtn" class="mt-2 px-4 py-2 bg-primary text-white rounded hover:bg-blue-900">Close</button>
 </div>
 
 <!-- JS -->
 <script>
+  const popup = document.getElementById('popup');
+  const overlay = document.getElementById('overlay');
+  const closeBtn = document.getElementById('closeBtn');
+
   function openPopup() {
-    document.getElementById('popup').classList.remove('hidden');
-    document.getElementById('overlay').classList.remove('hidden');
+    popup.classList.remove('hidden');
+    overlay.classList.remove('hidden');
   }
 
   function closePopup() {
-    document.getElementById('popup').classList.add('hidden');
-    document.getElementById('overlay').classList.add('hidden');
+    popup.classList.add('hidden');
+    overlay.classList.add('hidden');
+  }
+
+  // Ensure the button triggers closing
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closePopup);
   }
 </script>
 
-<!-- Tailwind Utility Colors if not already defined -->
+<!-- Tailwind Custom Colors -->
 <style>
   .text-primary {
     color: #2563eb;
